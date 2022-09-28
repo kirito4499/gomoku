@@ -1,38 +1,109 @@
 .App {
-  text-align: center;
+  padding-top: 0em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Board CSS */
+
+.board-container {
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board {
+  border: 1px solid #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* end Board CSS */
+
+/* Cell CSS */
+
+.btn {
+  padding: 10px 20px;
+  margin: 0 5px
+}
+
+.btn-board {
+  position: relative;
+  padding: 0;
+  margin: 2px;
+  background-color: rgba(76, 76, 76, 0.2); /* Green */
+  border: none;
   color: white;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background-color: rgba(76, 76, 76, 0.1); /* Green */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:active {
+  /* background-color: rgba(76, 76, 76, 0.3); Green */
 }
+
+.board-row > .btn {
+  flex: 1 1;
+}
+
+.board-row > .btn::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.x {
+  display: block;
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  top: 45%;
+  left: 51%;
+  -webkit-transform: translate(-50%,-40%);
+  -ms-transform: translate(-50%,-40%);
+  transform: translate(-50%,-40%);
+}
+
+.x:after, .x:before {
+  position: absolute;
+  left: 45%;
+  content: " ";
+  height: 90%;
+  width: 2px;
+  background-color: #fc4a1a;
+}
+
+.x:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.x:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.o {
+  display: block;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  border: 2px solid #f7b733;
+}
+
+/* end Cell CSS */
+
